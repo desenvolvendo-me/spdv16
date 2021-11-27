@@ -6,7 +6,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def write
-    Subscription.create(description: params["turma"]["nome"])
+    SubscribeJob.perform_later(subscription_params)
 
     render json: { message: "#{subscription_params["aluno"]}, sua inscrição na turma #{params["turma"]["nome"]} foi realizada com sucesso!" }
   end
