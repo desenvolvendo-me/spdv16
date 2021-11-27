@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   get 'subscriptions/read'
+  post 'subscriptions/write'
 end
